@@ -9,13 +9,11 @@ jobs:
   run-pipeline:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Grants the bot permission to commit and push changes back
+      contents: write
+      pull-requests: write
     steps:
       - name: Checkout repository code
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -31,10 +29,14 @@ jobs:
           PRODUCT_HUNT_TOKEN: ${{ secrets.PRODUCT_HUNT_TOKEN }}
         run: python generator.py
 
-      - name: Commit and push generated Markdown files
-        run: |
-          git config --global user.name "pSEO Bot"
-          git config --global user.email "bot@users.noreply.github.com"
-          git add content/tools/
-          git commit -m "Auto-generated new pSEO programmatic pages [skip ci]" || echo "No changes to commit"
-          git push
+      - name: Create Pull Request with generated pages
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Auto-generated new pSEO programmatic pages"
+          title: "🤖 New pSEO Generated Pages"
+          body: "Automated pipeline run generated new programmatic SEO Markdown files."
+          branch: pseo-auto-pages
+          delete-branch: true
+          committer: pSEO Bot <bot@users.noreply.github.com>
+          author: pSEO Bot <bot@users.noreply.github.com>
