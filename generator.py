@@ -29,8 +29,12 @@ def fetch_product_hunt_data():
     }
     """
     response = requests.post(url, json={"query": query}, headers=headers)
+    print("PH API Status Code:", response.status_code)
+    print("PH API Response:", response.text)
+    
     if response.status_code == 200:
-        return response.json().get("data", {}).get("posts", {}).get("edges", [])
+        data = response.json()
+        return data.get("data", {}).get("posts", {}).get("edges", [])
     return []
 
 def generate_ai_content(tool_name, tool_tagline):
@@ -52,6 +56,8 @@ def generate_ai_content(tool_name, tool_tagline):
 
 def create_markdown_file():
     posts = fetch_product_hunt_data()
+    print(f"Total posts fetched: {len(posts)}")
+    
     for edge in posts:
         node = edge["node"]
         name = node["name"]
