@@ -12,18 +12,13 @@ jobs:
       contents: write
       pull-requests: write
     steps:
-      - name: Checkout repository code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install dependencies
-        run: pip install requests
+      - run: pip install requests
 
       - name: Run Python generation script
         env:
@@ -31,7 +26,13 @@ jobs:
           PRODUCT_HUNT_TOKEN: ${{ secrets.PRODUCT_HUNT_TOKEN }}
         run: python generator.py
 
-      - name: Create Pull Request with generated pages
+      - name: Debug - what does git see?
+        run: |
+          pwd
+          ls -R content || echo "content/ missing"
+          git status --porcelain
+
+      - name: Create Pull Request
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -40,4 +41,4 @@ jobs:
           body: "Automated pipeline run generated new programmatic SEO Markdown files."
           branch: pseo-auto-pages
           delete-branch: true
-          add-paths: content/tools/
+          add-paths: content/tools/**
