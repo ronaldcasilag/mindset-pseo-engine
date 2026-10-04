@@ -2,8 +2,8 @@ name: Automated pSEO Generator
 
 on:
   schedule:
-    - cron: '0 8 * * 1' # Runs every Monday at 8:00 AM UTC
-  workflow_dispatch: # Allows manual triggers from your GitHub dashboard
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
 
 jobs:
   run-pipeline:
@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout repository code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -38,5 +40,4 @@ jobs:
           body: "Automated pipeline run generated new programmatic SEO Markdown files."
           branch: pseo-auto-pages
           delete-branch: true
-          committer: pSEO Bot <bot@users.noreply.github.com>
-          author: pSEO Bot <bot@users.noreply.github.com>
+          add-paths: content/tools/
