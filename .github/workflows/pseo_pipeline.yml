@@ -8,6 +8,8 @@ on:
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Grants the bot permission to commit and push changes back
     steps:
       - name: Checkout repository code
         uses: actions/checkout@v4
