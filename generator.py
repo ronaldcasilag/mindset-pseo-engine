@@ -16,7 +16,7 @@ def fetch_product_hunt_data():
     }
     query = """
     {
-      posts(first: 3, sortedBy: FEATURED) {
+      posts(order: VOTES, first: 3) {
         edges {
           node {
             name
@@ -36,13 +36,9 @@ def fetch_product_hunt_data():
 def generate_ai_content(tool_name, tool_tagline):
     """Uses Google's Gemini API free tier to write a structured SEO guide"""
     ai_url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}"
-    
     prompt = f"""
-    Write a 400-word objective review article about the productivity tool '{tool_name}' which has the tagline: '{tool_tagline}'.
-    Focus on how it helps professionals build better habits and overcome mental resistance.
-    Format the output cleanly in Markdown. Include an introductory hook, 2 core benefits, and a call-to-action to try the tool.
+    Write a 400-word objective review article about the productivity tool '{tool_name}' which has the tagline: '{tool_tagline}'. Focus on how it helps professionals build better habits and overcome mental resistance. Format the output cleanly in Markdown. Include an introductory hook, 2 core benefits, and a call-to-action to try the tool.
     """
-    
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
     headers = {"Content-Type": "application/json"}
     
@@ -80,7 +76,6 @@ title: "Best Review: {name} - {tagline}"
 description: "Discover how {name} helps you beat procrastination and build bulletproof habits."
 date: "{today}"
 ---
-
 """
         os.makedirs("content/tools", exist_ok=True)
         with open(filename, "w", encoding="utf-8") as f:
