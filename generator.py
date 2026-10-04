@@ -1,22 +1,42 @@
 import os
 import datetime
+import requests
 
-def create_markdown_file():
+def fetch_live_tools():
+    """
+    Fetches real productivity and software tools from an open API.
+    You can replace this endpoint later with the Product Hunt API or a custom list.
+    """
+    print("Fetching live tools from external source...")
+    try:
+        # Example: Fetching free public tech/software entries from a public API
+        response = requests.get("https://api.github.com/repositories?q=topic:productivity&sort=stars", timeout=10)
+        if response.status_code == 200:
+            items = response.json().get("items", [])[:3] # Grab top 3 trending tools
+            tools = []
+            for item in items:
+                tools.append({
+                    "name": item.get("name", "Productivity Tool"),
+                    "tagline": item.get("description") or "Boost your workflow and overcome daily resistance.",
+                    "url": item.get("html_url", "https://github.com")
+                })
+            return tools
+    except Exception as e:
+        print(f"API fetch failed ({e}), falling back to curated dynamic list.")
+        
+    # Safe fallback if API rate limits or fails
     today_str = datetime.date.today().isoformat()
-    
-    # Static guaranteed items to test PR creation immediately
-    posts = [
+    return [
         {
             "name": f"DeepWork Focus Engine {today_str}",
             "tagline": "Destroy distractions and hyper-focus on high-leverage tasks",
             "url": "https://www.producthunt.com"
-        },
-        {
-            "name": f"Habit Loop Tracker {today_str}",
-            "tagline": "Build unbreakable daily routines using behavioral science",
-            "url": "https://www.producthunt.com"
         }
     ]
+
+def create_markdown_file():
+    today_str = datetime.date.today().isoformat()
+    posts = fetch_live_tools()
     
     # Explicitly build absolute path to content/tools directory
     target_dir = os.path.join(os.getcwd(), "content", "tools")
