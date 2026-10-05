@@ -1,13 +1,25 @@
 import os
 import json
+from datetime import datetime
 
+# Ensure directories exist
 os.makedirs("content/tools", exist_ok=True)
 
-# Load data from external JSON file for effortless scaling
+# Base URL of your live GitHub Pages site
+BASE_URL = "https://ronaldcasilag.github.io/mindset-pseo-engine"
+today_date = datetime.now().strftime("%Y-%m-%d")
+
+# Load data from external JSON file
 with open("tools_data.json", "r", encoding="utf-8") as f:
     tools_data = json.load(f)
 
 catalog_items = []
+sitemap_urls = [
+    f"{BASE_URL}/",
+    f"{BASE_URL}/contact.html",
+    f"{BASE_URL}/privacy.html",
+    f"{BASE_URL}/content/tools/"
+]
 
 for tool in tools_data:
     html_content = f"""<!DOCTYPE html>
@@ -48,6 +60,9 @@ for tool in tools_data:
     with open(file_path, "w", encoding="utf-8") as f:
         f.write(html_content)
     
+    # Collect URL for the sitemap
+    sitemap_urls.append(f"{BASE_URL}/content/tools/{tool['slug']}.html")
+    
     catalog_items.append(f"""
         <div style="background: #fff; padding: 24px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px;">
             <span style="background: #e0e7ff; color: #3730a3; padding: 4px 10px; border-radius: 10px; font-size: 11px; font-weight: 600; text-transform: uppercase;">{tool['category']}</span>
@@ -56,6 +71,7 @@ for tool in tools_data:
         </div>
     """)
 
+# Generate catalog page (content/tools/index.html)
 catalog_page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,6 +96,7 @@ catalog_page = f"""<!DOCTYPE html>
     <main>
         {''.join(catalog_items)}
     </main>
+    footer
     <footer>
         &copy; 2026 Mindset pSEO Engine. All rights reserved.
     </footer>
@@ -90,4 +107,13 @@ catalog_page = f"""<!DOCTYPE html>
 with open("content/tools/index.html", "w", encoding="utf-8") as f:
     f.write(catalog_page)
 
-print(f"Successfully compiled {len(tools_data)} pages from JSON data.")
+# Automatically generate sitemap.xml at the repo root
+sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+for url in sitemap_urls:
+    sitemap_xml += f"  <url>\n    <loc>{url}</loc>\n    <lastmod>{today_date}</lastmod>\n  </url>\n"
+sitemap_xml += '</urlset>'
+
+with open("sitemap.xml", "w", encoding="utf-8") as f:
+    f.write(sitemap_xml)
+
+print(f"Successfully compiled {len(tools_data)} pages, index, and automated sitemap.xml.")
