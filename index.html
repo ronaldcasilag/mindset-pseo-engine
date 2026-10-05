@@ -1,177 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mindset pSEO Engine | Tools for focus, productivity, and mindset</title>
-<meta name="description" content="Guides and comparisons of software, productivity systems, and mindset tools, written to help you choose what fits your work.">
-<link rel="canonical" href="https://ronaldcasilag.github.io/mindset-pseo-engine/">
-<meta property="og:title" content="Mindset pSEO Engine">
-<meta property="og:description" content="Guides and comparisons of software, productivity systems, and mindset tools.">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#2b4c9b">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232b4c9b'/%3E%3Cpath d='M28 72V28l22 28 22-28v44' fill='none' stroke='white' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<style>
-:root{
-  --ink:#16222e; --muted:#566474; --paper:#fbfcfd; --tint:#eef2f7;
-  --rule:#dde3ea; --accent:#2b4c9b; --accent-ink:#ffffff;
-  --serif:Charter,"Iowan Old Style","Palatino Linotype",Georgia,serif;
-  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-@media (prefers-color-scheme:dark){
-  :root{--ink:#e8edf3; --muted:#a3b0bf; --paper:#0f1722; --tint:#16202d; --rule:#27333f; --accent:#7f9fe8; --accent-ink:#0f1722;}
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.65}
-a{color:var(--accent)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
-
-header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
-.brand{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
-nav{display:flex;flex-wrap:wrap;gap:4px 22px}
-nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
-nav a:hover{color:var(--ink);text-decoration:underline}
-
-.hero{padding:88px 0 72px}
-h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.2rem,5.4vw,3.6rem);line-height:1.12;letter-spacing:-.01em;margin:0 0 22px;max-width:18ch}
-.lede{font-size:1.2rem;color:var(--muted);max-width:56ch;margin:0 0 34px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none;border:1.5px solid var(--accent)}
-.btn.primary{background:var(--accent);color:var(--accent-ink)}
-.btn.primary:hover{filter:brightness(1.08)}
-.btn.ghost{color:var(--accent)}
-.btn.ghost:hover{background:var(--tint)}
-
-section{padding:64px 0;border-top:1px solid var(--rule)}
-h2{font-family:var(--serif);font-size:1.8rem;line-height:1.25;margin:0 0 12px}
-.intro{color:var(--muted);max-width:60ch;margin:0 0 36px}
-h3{font-family:var(--serif);font-size:1.25rem;margin:0 0 6px}
-p{margin:0 0 14px}
-
-.topics{display:grid;gap:0 48px;grid-template-columns:1fr}
-.topic{padding:22px 0;border-top:1px solid var(--rule)}
-.topic p{color:var(--muted);margin:0}
-
-.split{display:grid;gap:28px 64px;grid-template-columns:1fr}
-.criteria{list-style:none;margin:0;padding:0}
-.criteria li{padding:0 0 20px}
-.criteria strong{display:block;font-family:var(--serif);font-size:1.15rem}
-.criteria span{color:var(--muted)}
-
-.note{background:var(--tint);border-left:4px solid var(--accent);padding:22px 26px;border-radius:0 6px 6px 0;max-width:72ch}
-.note h2{font-size:1.35rem}
-.note p:last-child{margin:0}
-
-footer{border-top:1px solid var(--rule);padding:36px 0 48px;color:var(--muted);font-size:.95rem}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px}
-footer nav a{font-size:.95rem}
-
-@media (min-width:760px){
-  .topics{grid-template-columns:1fr 1fr}
-  .split{grid-template-columns:5fr 7fr}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindset pSEO Engine | Tools for focus, productivity, and mindset</title>
+    <meta name="description" content="Guides and comparisons of software, productivity systems, and mindset tools, written to help you choose what fits your work.">
+    <link rel="canonical" href="https://ronaldcasilag.github.io/mindset-pseo-engine/">
+    <meta property="og:title" content="Mindset pSEO Engine">
+    <meta property="og:description" content="Guides and comparisons of software, productivity systems, and mindset tools.">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#2b4c9b">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232b4c9b'/%3E%3Cpath d='M28 72V28l22 28 22-28v44' fill='none' stroke='white' stroke-width='9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <style>
+        :root{--ink:#16222e; --muted:#566474; --paper:#fbfcfd; --tint:#eef2f7; --rule:#dde3ea; --accent:#2b4c9b; --accent-ink:#ffffff; --serif:Charter,"Iowan Old Style","Palatino Linotype",Georgia,serif; --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+        @media (prefers-color-scheme:dark){:root{--ink:#e8edf3; --muted:#a3b0bf; --paper:#0f1722; --tint:#16202d; --rule:#27333f; --accent:#7f9fe8; --accent-ink:#0f1722;}}
+        *{box-sizing:border-box}
+        html{scroll-behavior:smooth;scroll-padding-top:72px}
+        body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.65}
+        a{color:var(--accent)}
+        :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:3px}
+        .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+        header{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+        header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:60px}
+        .brand{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--ink);text-decoration:none}
+        nav{display:flex;flex-wrap:wrap;gap:4px 22px}
+        nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+        nav a:hover{color:var(--ink);text-decoration:underline}
+        .hero{padding:88px 0 72px}
+        h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.2rem,5.4vw,3.6rem);line-height:1.12;letter-spacing:-.01em;margin:0 0 22px;max-width:18ch}
+        .lede{font-size:1.2rem;color:var(--muted);max-width:56ch;margin:0 0 34px}
+        .actions{display:flex;flex-wrap:wrap;gap:12px}
+        .btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;font-size:1rem;text-decoration:none;border:1.5px solid var(--accent)}
+        .btn.primary{background:var(--accent);color:var(--accent-ink)}
+        .btn.primary:hover{filter:brightness(1.08)}
+        .btn.ghost{color:var(--accent)}
+        .btn.ghost:hover{background:var(--tint)}
+        section{padding:64px 0;border-top:1px solid var(--rule)}
+        h2{font-family:var(--serif);font-size:1.8rem;line-height:1.25;margin:0 0 12px}
+        .intro{color:var(--muted);max-width:60ch;margin:0 0 36px}
+        h3{font-family:var(--serif);font-size:1.25rem;margin:0 0 6px}
+        p{margin:0 0 14px}
+        .topics{display:grid;gap:0 48px;grid-template-columns:1fr}
+        .topic{padding:22px 0;border-top:1px solid var(--rule)}
+        .topic p{color:var(--muted);margin:0}
+        .split{display:grid;gap:28px 64px;grid-template-columns:1fr}
+        .criteria{list-style:none;margin:0;padding:0}
+        .criteria li{padding:0 0 20px}
+        .criteria strong{display:block;font-family:var(--serif);font-size:1.15rem}
+        .criteria span{color:var(--muted)}
+        .note{background:var(--tint);border-left:4px solid var(--accent);padding:22px 26px;border-radius:0 6px 6px 0;max-width:72ch}
+        .note h2{font-size:1.35rem}
+        .note p:last-child{margin:0}
+        footer{border-top:1px solid var(--rule);padding:36px 0 48px;color:var(--muted);font-size:.95rem}
+        footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px}
+        footer nav a{font-size:.95rem}
+        @media (min-width:760px){.topics{grid-template-columns:1fr 1fr} .split{grid-template-columns:5fr 7fr}}
+    </style>
 </head>
 <body>
-
-<header>
-  <div class="wrap">
-    <a class="brand" href="./">Mindset pSEO Engine</a>
-    <nav aria-label="Main">
-      <a href="#topics">Topics</a>
-      <a href="#method">How we choose</a>
-      <a href="#about">About</a>
-      <a href="#disclosure">Disclosure</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <div class="wrap hero">
-    <h1>Practical tools for focus, productivity, and a steadier mindset.</h1>
-    <p class="lede">Guides and comparisons of software, productivity systems, and mindset tools, written to help you choose what fits the way you work.</p>
-    <div class="actions">
-      <a class="btn primary" href="#topics">Browse topics</a>
-      <a class="btn ghost" href="#method">How we choose tools</a>
-    </div>
-  </div>
-
-  <section id="topics">
-    <div class="wrap">
-      <h2>What we cover</h2>
-      <p class="intro">Four areas, each focused on one question: what will help you get started and keep going?</p>
-      <div class="topics">
-        <div class="topic">
-          <h3>Software</h3>
-          <p>Apps and platforms for writing, planning, automation, and everyday work, compared on features, price, and fit.</p>
+    <header>
+        <div class="wrap">
+            <a class="brand" href="./">Mindset pSEO Engine</a>
+            <nav aria-label="Main">
+                <a href="#topics">Topics</a>
+                <a href="#method">How we choose</a>
+                <a href="#about">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy & Disclosures</a>
+            </nav>
         </div>
-        <div class="topic">
-          <h3>Productivity</h3>
-          <p>Systems and methods for managing time, attention, and projects without adding overhead.</p>
+    </header>
+    <main>
+        <div class="wrap hero">
+            <h1>Practical tools for focus, productivity, and a steadier mindset.</h1>
+            <p class="lede">Guides and comparisons of software, productivity systems, and mindset tools, written to help you choose what fits the way you work.</p>
+            <div class="actions">
+                <a class="btn primary" href="#topics">Browse topics</a>
+                <a class="btn ghost" href="#method">How we choose tools</a>
+            </div>
         </div>
-        <div class="topic">
-          <h3>Mindset</h3>
-          <p>Tools and practices for building focus, resilience, and healthier thinking habits.</p>
+
+        <section id="topics">
+            <div class="wrap">
+                <h2>What we cover</h2>
+                <p class="intro">Four areas, each focused on one question: what will help you get started and keep going?</p>
+                <div class="topics">
+                    <div class="topic">
+                        <h3>Software</h3>
+                        <p>Apps and platforms for writing, planning, automation, and everyday work, compared on features, price, and fit.</p>
+                    </div>
+                    <div class="topic">
+                        <h3>Productivity</h3>
+                        <p>Systems and methods for managing time, attention, and projects without adding overhead.</p>
+                    </div>
+                    <div class="topic">
+                        <h3>Mindset</h3>
+                        <p>Tools and practices for building focus, resilience, and healthier thinking habits.</p>
+                    </div>
+                    <div class="topic">
+                        <h3>Resistance tools</h3>
+                        <p>Ways to get past procrastination and friction when you know what to do but can't start.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="method">
+            <div class="wrap split">
+                <div>
+                    <h2>How we choose tools</h2>
+                    <p class="intro">Every recommendation is judged on the same three questions.</p>
+                </div>
+                <ul class="criteria">
+                    <li><strong>Does it do the job?</strong><span>We check what a tool actually does against what it claims, and who it suits.</span></li>
+                    <li><strong>What does it really cost?</strong><span>We note pricing, free-plan limits, and anything that locks features behind a higher tier.</span></li>
+                    <li><strong>What are the trade-offs?</strong><span>Every tool has weaknesses. We state them plainly so you can decide for yourself.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="wrap split">
+                <div>
+                    <h2>About this site</h2>
+                </div>
+                <div>
+                    <p>Mindset pSEO Engine is an independent resource for people who want clear, practical guidance on the tools they use to focus and get work done.</p>
+                    <p>Questions, corrections, or tool suggestions are welcome via our <a href="contact.html">Contact & Support page</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="disclosure">
+            <div class="wrap">
+                <div class="note">
+                    <h2>Affiliate disclosure</h2>
+                    <p>Some links on this site are affiliate links. If you buy through them, we may earn a commission at no extra cost to you. This does not change how we describe or rate a tool.</p>
+                    <p>Content about mindset is for general education only. It is not medical or mental health advice. Read our full <a href="privacy.html">Privacy & Disclosures policy</a>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap">
+            <span>&copy; 2026 Mindset pSEO Engine. All rights reserved.</span>
+            <nav aria-label="Footer">
+                <a href="#topics">Topics</a>
+                <a href="#method">How we choose</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy & Disclosures</a>
+            </nav>
         </div>
-        <div class="topic">
-          <h3>Resistance tools</h3>
-          <p>Ways to get past procrastination and friction when you know what to do but can't start.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="method">
-    <div class="wrap split">
-      <div>
-        <h2>How we choose tools</h2>
-        <p class="intro">Every recommendation is judged on the same three questions.</p>
-      </div>
-      <ul class="criteria">
-        <li><strong>Does it do the job?</strong><span>We check what a tool actually does against what it claims, and who it suits.</span></li>
-        <li><strong>What does it really cost?</strong><span>We note pricing, free-plan limits, and anything that locks features behind a higher tier.</span></li>
-        <li><strong>What are the trade-offs?</strong><span>Every tool has weaknesses. We state them plainly so you can decide for yourself.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="wrap split">
-      <div>
-        <h2>About this site</h2>
-      </div>
-      <div>
-        <p>Mindset pSEO Engine is an independent resource for people who want clear, practical guidance on the tools they use to focus and get work done.</p>
-        <p>Questions, corrections, or tool suggestions are welcome at <a href="mailto:contact@example.com">contact@example.com</a>.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="disclosure">
-    <div class="wrap">
-      <div class="note">
-        <h2>Affiliate disclosure</h2>
-        <p>Some links on this site are affiliate links. If you buy through them, we may earn a commission at no extra cost to you. This does not change how we describe or rate a tool.</p>
-        <p>Content about mindset is for general education only. It is not medical or mental health advice.</p>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <span>&copy; 2026 Mindset pSEO Engine</span>
-    <nav aria-label="Footer">
-      <a href="#topics">Topics</a>
-      <a href="#method">How we choose</a>
-      <a href="#about">About</a>
-      <a href="#disclosure">Disclosure</a>
-    </nav>
-  </div>
-</footer>
-
+    </footer>
 </body>
 </html>
