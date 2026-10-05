@@ -30,7 +30,6 @@ jobs:
       - name: Run pSEO Generator
         run: python generator.py
 
-      # --- NEW: Deploy directly in the same workflow ---
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
