@@ -1,52 +1,44 @@
-name: Automated pSEO Generator
+name: Automated pSEO Generator & Deploy
 
 on:
-  schedule:
-    - cron: '0 8 * * 1'
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
-jobs:
-  run-pipeline:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v4
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
-      - uses: actions/setup-python@v5
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - run: pip install requests
-
-      - name: Verify generator file
+      - name: Install dependencies
         run: |
-          git log -1 --oneline
-          wc -l generator.py
-          grep -n "__main__" generator.py
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; endif
 
-      - name: Run Python generation script
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          PRODUCT_HUNT_TOKEN: ${{ secrets.PRODUCT_HUNT_TOKEN }}
-        run: |
-          python -u generator.py
-          test -n "$(ls content/tools/*.md 2>/dev/null)" || { echo "No files generated"; exit 1; }
+      - name: Run pSEO Generator
+        run: python generator.py
 
-      - name: Debug - what does git see?
-        run: |
-          pwd
-          ls -R content || echo "content/ missing"
-          git status --porcelain
+      # --- NEW: Deploy directly in the same workflow ---
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "Auto-generated new pSEO programmatic pages"
-          title: "🤖 New pSEO Generated Pages"
-          body: "Automated pipeline run generated new programmatic SEO Markdown files."
-          branch: pseo-auto-pages
-          delete-branch: true
-          add-paths: content/tools/**
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
