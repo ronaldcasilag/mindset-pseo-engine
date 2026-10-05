@@ -40,5 +40,33 @@
     "subtitle": "A comparative guide to structuring your calendar for maximum cognitive output.",
     "category": "Productivity",
     "content": "<p>Choosing the right scheduling framework determines whether your calendar serves your goals or controls your stress levels.</p><h2>The Breakdown</h2><p>Time blocking assigns every hour a specific theme, while task batching groups similar low-friction tasks together to minimize context switching costs.</p>"
+  },
+  {
+    "slug": "managing-creative-fatigue",
+    "title": "Managing Creative Fatigue When Output Stalls",
+    "subtitle": "How to pivot your energy from relentless creation to deep intake and system optimization.",
+    "category": "Mindset & Recovery",
+    "content": "<p>Creative output naturally ebbs and flows. Forcing production during a dry spell usually leads to subpar content and deeper exhaustion.</p><h2>The Refuel Phase</h2><p>Shift your schedule toward input: reading dense material, auditing old systems, or taking long walks without audio inputs to let subconscious processing take over.</p>"
+  },
+  {
+    "slug": "deep-work-distraction-shields",
+    "title": "Building Digital Distraction Shields for Focus",
+    "subtitle": "Practical environment design techniques to keep notifications and tabs from breaking your flow.",
+    "category": "Focus & Habits",
+    "content": "<p>Willpower is a poor defense against modern software engineering designed to steal your attention. You must rely on environmental architecture instead.</p><h2>Environment Design</h2><p>Use strict network-blocking software during deep blocks, clear your desktop of unrelated shortcuts, and turn your phone completely face down out of arms reach.</p>"
+  },
+  {
+    "slug": "minimizing-decision-fatigue",
+    "title": "Minimizing Decision Fatigue Through Pre-Commitment",
+    "subtitle": "Automate your daily micro-decisions so your cognitive horsepower goes toward high-leverage problems.",
+    "category": "Productivity",
+    "content": "<p>Every choice you make—what to wear, what to eat, what task to open next—draws down a shared pool of mental energy.</p><h2>The Pre-Commitment Protocol</h2><p>Decide your top three priorities the night before. When you sit down to work, eliminate the question of <em>'What should I do?'</em> entirely.</p>"
+  },
+  {
+    "slug": "auditing-your-attention-leaks",
+    "title": "Auditing Your Daily Attention Leaks",
+    "subtitle": "A 7-day tracking framework to uncover where your focus actually goes versus where you want it to.",
+    "category": "Focus & Habits",
+    "content": "<p>Most people dramatically underestimate how many times a day they check email, messaging apps, or browsers out of reflex.</p><h2>The Audit Process</h2><p>Carry a physical notepad for one week and tally every single time you switch tasks mid-stream. The resulting data is often shocking—and highly illuminating.</p>"
   }
 ]
