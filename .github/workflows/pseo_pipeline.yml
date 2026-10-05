@@ -43,6 +43,7 @@ jobs:
         run: |
           mkdir -p _site
           cp ./*.html _site/
+          if [ -f sitemap.xml ]; then cp sitemap.xml _site/; fi
           touch _site/.nojekyll
           if [ -d content ]; then cp -r content _site/content; fi
           echo "Site contents:"
