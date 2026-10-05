@@ -19,5 +19,26 @@
     "subtitle": "Reclaim your attention span from endless feeds and shallow distraction loops.",
     "category": "Focus & Habits",
     "content": "<p>Modern creators struggle not with a lack of ideas, but with a fractured attention span caused by constant micro-dopamine hits from notifications and feeds.</p>"
+  },
+  {
+    "slug": "overcoming-perfectionism-paralysis",
+    "title": "Overcoming Perfectionism Paralysis in Shipping Work",
+    "subtitle": "Why waiting for the 'perfect' moment is killing your output and how to ship anyway.",
+    "category": "Resistance Tools",
+    "content": "<p>Perfectionism is rarely about high standards; it is usually fear disguised as quality control. When you demand perfection out of the gate, you guarantee inaction.</p><h2>The Ship-First Methodology</h2><p>Adopt an iterative mindset. Version one completed and shipped beats version zero planned to perfection every single time.</p>"
+  },
+  {
+    "slug": "async-communication-framework",
+    "title": "The Async Communication Playbook for Distributed Teams",
+    "subtitle": "Cut down endless meetings and reclaim uninterrupted blocks for deep work.",
+    "category": "Software & Systems",
+    "content": "<p>Synchronous communication (constant Slack pings, back-to-back Zoom calls) destroys deep focus. Shifting to asynchronous workflows allows teams to think deeply before responding.</p><h2>Core Pillars</h2><ul><li>Default to documentation over direct messaging.</li><li>Set explicit turnaround SLAs so no one is left guessing.</li></ul>"
+  },
+  {
+    "slug": "time-blocking-vs-task-batching",
+    "title": "Time Blocking vs. Task Batching: Which System Fits You?",
+    "subtitle": "A comparative guide to structuring your calendar for maximum cognitive output.",
+    "category": "Productivity",
+    "content": "<p>Choosing the right scheduling framework determines whether your calendar serves your goals or controls your stress levels.</p><h2>The Breakdown</h2><p>Time blocking assigns every hour a specific theme, while task batching groups similar low-friction tasks together to minimize context switching costs.</p>"
   }
 ]
