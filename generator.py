@@ -1,57 +1,11 @@
 import os
+import json
 
-# Ensure directories exist
 os.makedirs("content/tools", exist_ok=True)
 
-# Define your programmatic data sets (mindset, resistance, and productivity tools)
-tools_data = [
-    {
-        "slug": "unmotivated-running-on-empty",
-        "title": "You’re Not Unmotivated — You’re Running on Empty",
-        "subtitle": "A deep dive into burnout recovery, cognitive fatigue, and resetting your baseline energy.",
-        "category": "Mindset & Recovery",
-        "content": """
-            <p>Most high-performers label themselves as 'lazy' or 'unmotivated' when they hit a wall. In reality, motivation is a finite emotional resource that burns out when your physical and mental recovery deficit crosses a critical threshold.</p>
-            <h2>The Core Symptoms of Running on Empty</h2>
-            <ul>
-                <li>Chronic decision fatigue over simple, everyday tasks.</li>
-                <li>Numbness toward goals that previously sparked excitement.</li>
-                <li>Physical lethargy that doesn't resolve with standard sleep.</li>
-            </ul>
-            <h2>Actionable Recovery Framework</h2>
-            <p>To reverse this state, you must pivot from forcing output to intentional systemic restoration. Cut your daily cognitive load by 50% for 3 days, audit your sleep hygiene, and eliminate micro-stressors before attempting to rebuild momentum.</p>
-        """
-    },
-    {
-        "slug": "breaking-the-resistance-loop",
-        "title": "Breaking the Resistance Loop in Deep Work",
-        "subtitle": "How to bypass psychological friction and step into frictionless execution.",
-        "category": "Productivity",
-        "content": """
-            <p>The greater the resistance you feel toward a task, the more important that task is for your long-term growth. Resistance isn't a sign to stop; it's a compass pointing directly at the work that matters.</p>
-            <h2>Why Resistance Manifests</h2>
-            <p>Your brain is biologically wired to conserve energy and avoid uncertainty. When you approach high-leverage deep work, your amygdala triggers resistance to protect you from perceived failure or cognitive strain.</p>
-            <h2>The 5-Minute Rule</h2>
-            <p>Commit to working on the task for just five minutes with zero expectations of finishing. Once friction is broken, momentum takes over naturally.</p>
-        """
-    },
-    {
-        "slug": "dopamine-detox-for-creators",
-        "title": "The Creator's Dopamine Reset: Reclaiming Focus",
-        "subtitle": "Reclaim your attention span from endless feeds and shallow distraction loops.",
-        "category": "Focus & Habits",
-        "content": """
-            <p>Modern creators struggle not with a lack of ideas, but with a fractured attention span caused by constant micro-dopamine hits from notifications, analytics dashboards, and social feeds.</p>
-            <h2>Signs Your Baseline is Hijacked</h2>
-            <ul>
-                <li>The compulsive urge to check your phone every 3 minutes.</li>
-                <li>Inability to read a book or watch a video longer than 5 minutes without skipping.</li>
-            </ul>
-            <h2>Executing a Clean Reset</h2>
-            <p>Designate strict offline blocks in your daily calendar. Treat your attention as your most valuable financial asset—because in the digital economy, it literally is.</p>
-        """
-    }
-]
+# Load data from external JSON file for effortless scaling
+with open("tools_data.json", "r", encoding="utf-8") as f:
+    tools_data = json.load(f)
 
 catalog_items = []
 
@@ -102,7 +56,6 @@ for tool in tools_data:
         </div>
     """)
 
-# Generate the automatic tools catalog page (content/tools/index.html)
 catalog_page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -122,7 +75,7 @@ catalog_page = f"""<!DOCTYPE html>
     <a class="back" href="../../index.html">&larr; Back to Home</a>
     <header>
         <h1>Programmatic Tool Directory</h1>
-        <p style="color: #4b5563; margin-bottom: 0;">Explore our complete directory of automated mindset frameworks, focus systems, and execution tools.</p>
+        <p style="color: #4b5563; margin-bottom: 0;">Explore our complete directory of automated mindset frameworks and focus systems.</p>
     </header>
     <main>
         {''.join(catalog_items)}
@@ -137,4 +90,4 @@ catalog_page = f"""<!DOCTYPE html>
 with open("content/tools/index.html", "w", encoding="utf-8") as f:
     f.write(catalog_page)
 
-print(f"Successfully generated {len(tools_data)} tools and the dynamic tools index page.")
+print(f"Successfully compiled {len(tools_data)} pages from JSON data.")
