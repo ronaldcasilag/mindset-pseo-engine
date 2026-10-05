@@ -42,7 +42,7 @@ jobs:
       - name: Assemble site folder
         run: |
           mkdir -p _site
-          cp index.html _site/
+          cp ./*.html _site/
           touch _site/.nojekyll
           if [ -d content ]; then cp -r content _site/content; fi
           echo "Site contents:"
