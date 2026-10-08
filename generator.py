@@ -1,4 +1,4 @@
-import os 
+import os
 import json
 from datetime import datetime
 
@@ -29,10 +29,8 @@ total_pages_generated = 0
 for cat in categories:
     cat_name = cat["name"]
     for prob in cat["problems"]:
-        # Generate the base problem page
         pages_to_build = [(prob["slug"], prob["title"], prob["subtitle"], cat_name)]
         
-        # Matrix multiply with audiences to create long-tail pSEO pages
         for aud in audiences:
             long_tail_slug = f"{prob['slug']}-{aud['suffix']}"
             long_tail_title = f"{prob['title']} ({aud['label']})"
@@ -52,7 +50,11 @@ for cat in categories:
         header {{ background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 30px; }}
         h1 {{ color: #111; margin-top: 0; font-size: 28px; }}
         .badge {{ background: #e0e7ff; color: #3730a3; padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; text-transform: uppercase; }}
-        .content {{ background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }}
+        .content {{ background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 24px; }}
+        .recommendation {{ background: #f0fdf4; border: 1px solid #bbf7d0; padding: 24px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 24px; }}
+        .recommendation h3 {{ color: #166534; margin-top: 0; font-size: 18px; }}
+        .cta-btn {{ display: inline-block; background: #16a34a; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 12px; }}
+        .cta-btn:hover {{ background: #15803d; }}
         .back {{ display: inline-block; margin-bottom: 20px; color: #4f46e5; text-decoration: none; font-weight: 500; }}
         .back:hover {{ text-decoration: underline; }}
         footer {{ margin-top: 40px; text-align: center; color: #6b7280; font-size: 14px; }}
@@ -74,6 +76,14 @@ for cat in categories:
             <li>Iterate through execution loops without falling into perfectionism traps.</li>
         </ul>
     </div>
+    
+    <div class="recommendation">
+        <h3>Recommended Tool & System Stack</h3>
+        <p>To implement this framework effortlessly, we recommend using a reliable workspace or focus environment designed for high-leverage output.</p>
+        <a class="cta-btn" href="#" target="_blank" rel="noopener">Explore Recommended Resource &rarr;</a>
+        <p style="font-size: 12px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">*Disclosure: We may earn an affiliate commission if you sign up through our link, at no extra cost to you.</p>
+    </div>
+
     <footer>
         &copy; 2026 Mindset pSEO Engine. All rights reserved.
     </footer>
@@ -94,7 +104,6 @@ for cat in categories:
                 </div>
             """)
 
-# Generate catalog page (content/tools/index.html)
 catalog_page = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -129,7 +138,6 @@ catalog_page = f"""<!DOCTYPE html>
 with open("content/tools/index.html", "w", encoding="utf-8") as f:
     f.write(catalog_page)
 
-# Automatically generate sitemap.xml at the repo root
 sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for url in sitemap_urls:
     sitemap_xml += f"  <url>\n    <loc>{url}</loc>\n    <lastmod>{today_date}</lastmod>\n  </url>\n"
@@ -138,4 +146,4 @@ sitemap_xml += '</urlset>'
 with open("sitemap.xml", "w", encoding="utf-8") as f:
     f.write(sitemap_xml)
 
-print(f"Successfully compiled {total_pages_generated} programmatic pSEO pages, catalog, and sitemap.xml.")
+print(f"Successfully compiled {total_pages_generated} programmatic pSEO pages with contextual affiliate blocks.")
