@@ -55,6 +55,11 @@ for cat in categories:
         .recommendation h3 {{ color: #166534; margin-top: 0; font-size: 18px; }}
         .cta-btn {{ display: inline-block; background: #16a34a; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 12px; }}
         .cta-btn:hover {{ background: #15803d; }}
+        .optin-box {{ background: #eff6ff; border: 1px solid #bfdbfe; padding: 30px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-bottom: 24px; text-align: center; }}
+        .optin-box h3 {{ color: #1e40af; margin-top: 0; font-size: 20px; }}
+        .optin-input {{ padding: 10px; width: 65%; max-width: 300px; border: 1px solid #d1d5db; border-radius: 6px; margin-right: 8px; font-size: 14px; }}
+        .optin-btn {{ background: #2563eb; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 14px; }}
+        .optin-btn:hover {{ background: #1d4ed8; }}
         .back {{ display: inline-block; margin-bottom: 20px; color: #4f46e5; text-decoration: none; font-weight: 500; }}
         .back:hover {{ text-decoration: underline; }}
         footer {{ margin-top: 40px; text-align: center; color: #6b7280; font-size: 14px; }}
@@ -82,6 +87,16 @@ for cat in categories:
         <p>To implement this framework effortlessly, we recommend using a reliable workspace or focus environment designed for high-leverage output.</p>
         <a class="cta-btn" href="#" target="_blank" rel="noopener">Explore Recommended Resource &rarr;</a>
         <p style="font-size: 12px; color: #6b7280; margin-top: 12px; margin-bottom: 0;">*Disclosure: We may earn an affiliate commission if you sign up through our link, at no extra cost to you.</p>
+    </div>
+
+    <div class="optin-box">
+        <h3>Get the Deep Work & Mindset System Playbook</h3>
+        <p style="color: #4b5563; font-size: 15px; margin-bottom: 20px;">Join thousands of high-performers receiving weekly tactics on breaking resistance loops and scaling cognitive focus.</p>
+        <!-- Replace form action with your free form provider (e.g., Formspree, Mailchimp, Substack) when ready -->
+        <form action="#" method="POST">
+            <input class="optin-input" type="email" name="email" placeholder="Enter your best email..." required>
+            <button class="optin-btn" type="submit">Get Free Playbook</button>
+        </form>
     </div>
 
     <footer>
@@ -146,4 +161,4 @@ sitemap_xml += '</urlset>'
 with open("sitemap.xml", "w", encoding="utf-8") as f:
     f.write(sitemap_xml)
 
-print(f"Successfully compiled {total_pages_generated} programmatic pSEO pages with contextual affiliate blocks.")
+print(f"Successfully compiled {total_pages_generated} programmatic pSEO pages with lead capture opt-in forms.")
