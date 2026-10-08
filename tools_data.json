@@ -1,72 +1,39 @@
-[
-  {
-    "slug": "unmotivated-running-on-empty",
-    "title": "You’re Not Unmotivated — You’re Running on Empty",
-    "subtitle": "A deep dive into burnout recovery, cognitive fatigue, and resetting your baseline energy.",
-    "category": "Mindset & Recovery",
-    "content": "<p>Most high-performers label themselves as 'lazy' or 'unmotivated' when they hit a wall. In reality, motivation is a finite emotional resource that burns out when your physical and mental recovery deficit crosses a critical threshold.</p><h2>The Core Symptoms</h2><ul><li>Chronic decision fatigue over simple tasks.</li><li>Numbness toward goals that previously sparked excitement.</li></ul>"
-  },
-  {
-    "slug": "breaking-the-resistance-loop",
-    "title": "Breaking the Resistance Loop in Deep Work",
-    "subtitle": "How to bypass psychological friction and step into frictionless execution.",
-    "category": "Productivity",
-    "content": "<p>The greater the resistance you feel toward a task, the more important that task is for your long-term growth.</p><h2>The 5-Minute Rule</h2><p>Commit to working on the task for just five minutes with zero expectations of finishing. Once friction is broken, momentum takes over naturally.</p>"
-  },
-  {
-    "slug": "dopamine-detox-for-creators",
-    "title": "The Creator's Dopamine Reset: Reclaiming Focus",
-    "subtitle": "Reclaim your attention span from endless feeds and shallow distraction loops.",
-    "category": "Focus & Habits",
-    "content": "<p>Modern creators struggle not with a lack of ideas, but with a fractured attention span caused by constant micro-dopamine hits from notifications and feeds.</p>"
-  },
-  {
-    "slug": "overcoming-perfectionism-paralysis",
-    "title": "Overcoming Perfectionism Paralysis in Shipping Work",
-    "subtitle": "Why waiting for the 'perfect' moment is killing your output and how to ship anyway.",
-    "category": "Resistance Tools",
-    "content": "<p>Perfectionism is rarely about high standards; it is usually fear disguised as quality control. When you demand perfection out of the gate, you guarantee inaction.</p><h2>The Ship-First Methodology</h2><p>Adopt an iterative mindset. Version one completed and shipped beats version zero planned to perfection every single time.</p>"
-  },
-  {
-    "slug": "async-communication-framework",
-    "title": "The Async Communication Playbook for Distributed Teams",
-    "subtitle": "Cut down endless meetings and reclaim uninterrupted blocks for deep work.",
-    "category": "Software & Systems",
-    "content": "<p>Synchronous communication (constant Slack pings, back-to-back Zoom calls) destroys deep focus. Shifting to asynchronous workflows allows teams to think deeply before responding.</p><h2>Core Pillars</h2><ul><li>Default to documentation over direct messaging.</li><li>Set explicit turnaround SLAs so no one is left guessing.</li></ul>"
-  },
-  {
-    "slug": "time-blocking-vs-task-batching",
-    "title": "Time Blocking vs. Task Batching: Which System Fits You?",
-    "subtitle": "A comparative guide to structuring your calendar for maximum cognitive output.",
-    "category": "Productivity",
-    "content": "<p>Choosing the right scheduling framework determines whether your calendar serves your goals or controls your stress levels.</p><h2>The Breakdown</h2><p>Time blocking assigns every hour a specific theme, while task batching groups similar low-friction tasks together to minimize context switching costs.</p>"
-  },
-  {
-    "slug": "managing-creative-fatigue",
-    "title": "Managing Creative Fatigue When Output Stalls",
-    "subtitle": "How to pivot your energy from relentless creation to deep intake and system optimization.",
-    "category": "Mindset & Recovery",
-    "content": "<p>Creative output naturally ebbs and flows. Forcing production during a dry spell usually leads to subpar content and deeper exhaustion.</p><h2>The Refuel Phase</h2><p>Shift your schedule toward input: reading dense material, auditing old systems, or taking long walks without audio inputs to let subconscious processing take over.</p>"
-  },
-  {
-    "slug": "deep-work-distraction-shields",
-    "title": "Building Digital Distraction Shields for Focus",
-    "subtitle": "Practical environment design techniques to keep notifications and tabs from breaking your flow.",
-    "category": "Focus & Habits",
-    "content": "<p>Willpower is a poor defense against modern software engineering designed to steal your attention. You must rely on environmental architecture instead.</p><h2>Environment Design</h2><p>Use strict network-blocking software during deep blocks, clear your desktop of unrelated shortcuts, and turn your phone completely face down out of arms reach.</p>"
-  },
-  {
-    "slug": "minimizing-decision-fatigue",
-    "title": "Minimizing Decision Fatigue Through Pre-Commitment",
-    "subtitle": "Automate your daily micro-decisions so your cognitive horsepower goes toward high-leverage problems.",
-    "category": "Productivity",
-    "content": "<p>Every choice you make—what to wear, what to eat, what task to open next—draws down a shared pool of mental energy.</p><h2>The Pre-Commitment Protocol</h2><p>Decide your top three priorities the night before. When you sit down to work, eliminate the question of <em>'What should I do?'</em> entirely.</p>"
-  },
-  {
-    "slug": "auditing-your-attention-leaks",
-    "title": "Auditing Your Daily Attention Leaks",
-    "subtitle": "A 7-day tracking framework to uncover where your focus actually goes versus where you want it to.",
-    "category": "Focus & Habits",
-    "content": "<p>Most people dramatically underestimate how many times a day they check email, messaging apps, or browsers out of reflex.</p><h2>The Audit Process</h2><p>Carry a physical notepad for one week and tally every single time you switch tasks mid-stream. The resulting data is often shocking—and highly illuminating.</p>"
-  }
-]
+{
+  "categories": [
+    {
+      "name": "Mindset & Recovery",
+      "problems": [
+        {"slug": "unmotivated-running-on-empty", "title": "You’re Not Unmotivated — You’re Running on Empty", "subtitle": "A deep dive into burnout recovery, cognitive fatigue, and resetting your baseline energy."},
+        {"slug": "managing-creative-fatigue", "title": "Managing Creative Fatigue When Output Stalls", "subtitle": "How to pivot your energy from relentless creation to deep intake and system optimization."}
+      ]
+    },
+    {
+      "name": "Productivity & Focus",
+      "problems": [
+        {"slug": "breaking-the-resistance-loop", "title": "Breaking the Resistance Loop in Deep Work", "subtitle": "How to bypass psychological friction and step into frictionless execution."},
+        {"slug": "time-blocking-vs-task-batching", "title": "Time Blocking vs. Task Batching: Which System Fits You?", "subtitle": "A comparative guide to structuring your calendar for maximum cognitive output."},
+        {"slug": "minimizing-decision-fatigue", "title": "Minimizing Decision Fatigue Through Pre-Commitment", "subtitle": "Automate your daily micro-decisions so your cognitive horsepower goes toward high-leverage problems."}
+      ]
+    },
+    {
+      "name": "Focus & Habits",
+      "problems": [
+        {"slug": "dopamine-detox-for-creators", "title": "The Creator's Dopamine Reset: Reclaiming Focus", "subtitle": "Reclaim your attention span from endless feeds and shallow distraction loops."},
+        {"slug": "deep-work-distraction-shields", "title": "Building Digital Distraction Shields for Focus", "subtitle": "Practical environment design techniques to keep notifications and tabs from breaking your flow."},
+        {"slug": "auditing-your-attention-leaks", "title": "Auditing Your Daily Attention Leaks", "subtitle": "A 7-day tracking framework to uncover where your focus actually goes versus where you want it to."}
+      ]
+    },
+    {
+      "name": "Resistance Tools",
+      "problems": [
+        {"slug": "overcoming-perfectionism-paralysis", "title": "Overcoming Perfectionism Paralysis in Shipping Work", "subtitle": "Why waiting for the 'perfect' moment is killing your output and how to ship anyway."}
+      ]
+    }
+  ],
+  "audiences": [
+    {"suffix": "for-remote-developers", "label": "for Remote Software Engineers"},
+    {"suffix": "for-solo-creators", "label": "for Solo Content Creators"},
+    {"suffix": "for-busy-founders", "label": "for Early-Stage Founders"},
+    {"suffix": "for-adhd-professionals", "label": "for Professionals with ADHD Focus Challenges"}
+  ]
+}
